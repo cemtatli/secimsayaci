@@ -20,7 +20,7 @@ const CustomDialog: React.FC = () => {
   return (
     <section className="flex items-center justify-center">
       <button
-        className="flex items-center gap-x-2.5 rounded-full border transition-colors duration-200 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-500 hover:text-white hover:border-transparent focus:outline-none"
+        className="flex items-center gap-x-2.5 rounded-full border transition-colors duration-300 dark:border-white dark:text-white dark:hover:bg-white/10 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-500 hover:text-white hover:border-transparent focus:outline-none"
         onClick={toggleDialog}
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

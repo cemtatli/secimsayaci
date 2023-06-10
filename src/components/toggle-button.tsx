@@ -13,7 +13,7 @@ const ToggleButton = () => {
   return (
     <Switch.Group>
       <section className="flex items-center justify-center">
-        <Switch.Label className="mr-4 dark:text-white text-sm font-medium">
+        <Switch.Label className="mr-4 text-slate-950 dark:text-white text-sm font-medium">
           Yerel Seçimler
         </Switch.Label>
         <Switch
@@ -23,7 +23,7 @@ const ToggleButton = () => {
             electionType === "genel"
               ? "bg-blue-500 focus:ring-blue-400"
               : "bg-gray-200 focus:ring-gray-400"
-          } relative inline-flex items-center h-6 rounded-full w-11 transition-colors duration-300 ease-in-out focus:outline-none`}
+          } relative inline-flex items-center h-6 rounded-full w-11 dark:bg-blue-500 transition-colors duration-300 ease-in-out focus:outline-none`}
         >
           <span className="sr-only">Toggle</span>
           <span
@@ -32,7 +32,7 @@ const ToggleButton = () => {
             } inline-block w-4 h-4 transform bg-white rounded-full transition-transform duration-300 ease-in-out`}
           />
         </Switch>
-        <Switch.Label className="ml-4 dark:text-white text-sm font-medium">
+        <Switch.Label className="ml-4 text-slate-950 dark:text-white text-sm font-medium">
           Genel Seçimler
         </Switch.Label>
       </section>

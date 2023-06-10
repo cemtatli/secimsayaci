@@ -115,7 +115,7 @@ const ThemeChanger: React.FC = () => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Menu.Items className="absolute right-0 mt-4 w-36 divide-y divide-gray-200 rounded-2xl border border-zinc-200 bg-white font-medium transition-all duration-200 focus:outline-none dark:border-opacity-10 dark:border-opacity-10 dark:bg-zinc-900">
+            <Menu.Items className="absolute right-0 mt-3 w-40 divide-y divide-gray-200 rounded-2xl border border-zinc-200 bg-white font-medium transition-all duration-200 focus:outline-none dark:border-opacity-10 dark:bg-zinc-900">
               <div className="p-1">
                 {themeOptions.map((option) => (
                   <Menu.Item key={option.value}>
@@ -125,7 +125,7 @@ const ThemeChanger: React.FC = () => {
                           active
                             ? "bg-brand-blue-100 text-brand-blue-600 dark:bg-zinc-800 dark:text-white"
                             : "text-gray-800"
-                        } group flex w-full items-center rounded-2xl px-4 py-2 text-sm transition-all duration-300 dark:text-zinc-200 `}
+                        } group flex w-full items-center rounded-2xl px-4 py-2 text-sm transition-all duration-300 dark:text-zinc-200`}
                         onClick={() => handleThemeChange(option.value)}
                       >
                         {option.icon}
