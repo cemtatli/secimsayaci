@@ -17,7 +17,7 @@ const ExchangeRatesComponent: React.FC = () => {
         const rates = await getExchangeRates();
         setCurrencies(
           rates.filter(
-            (currency) =>
+            (currency: { CurrencyName: string }) =>
               currency.CurrencyName === "US DOLLAR" ||
               currency.CurrencyName === "EURO" ||
               currency.CurrencyName === "POUND STERLING" ||
