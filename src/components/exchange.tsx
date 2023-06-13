@@ -17,7 +17,7 @@ const ExchangeRatesComponent: React.FC = () => {
         const rates = await getExchangeRates();
         setCurrencies(
           rates.filter(
-            (currency: { CurrencyName: string }) =>
+            (currency: Currency) =>
               currency.CurrencyName === "US DOLLAR" ||
               currency.CurrencyName === "EURO" ||
               currency.CurrencyName === "POUND STERLING" ||
@@ -67,7 +67,7 @@ const ExchangeRatesComponent: React.FC = () => {
                   <strong>Alış:</strong> {currency.ForexBuying.toFixed(2)} ₺
                 </span>
                 <span>
-                  <strong>Satış:</strong> {currency.ForexBuying.toFixed(2)} ₺
+                  <strong>Satış:</strong> {currency.ForexSelling.toFixed(2)} ₺
                 </span>
               </div>
             </div>

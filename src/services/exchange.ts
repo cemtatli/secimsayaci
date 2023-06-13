@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getExchangeRates = async (): Promise<{ [key: string]: number }> => {
+export const getExchangeRates = async (): Promise<{ [key: string]: any }> => {
   try {
     const response = await axios.get("http://hasanadiguzel.com.tr/api/kurgetir");
     return response.data.TCMB_AnlikKurBilgileri;
