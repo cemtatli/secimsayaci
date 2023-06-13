@@ -58,17 +58,17 @@ const CustomDialog: React.FC = () => {
               leaveTo="opacity-0 scale-95"
             >
               <div className="w-[350px] rounded bg-white p-4 lg:w-[1024px]">
-                <Dialog.Title as="h3" className="mb-4 text-base md:text-lg font-semibold">
+                <Dialog.Title as="h3" className="mb-2 md:text-lg font-semibold">
                   Bilgilendirme
                 </Dialog.Title>
-                <hr className="my-4" />
+                <hr className="my-2.5" />
                 <p>
                   {getElectionDate()} tarihinde yapılacaktır. Bu sayaç, en son açıklanan seçim
                   tarihine göre geri sayım yapmaktadır. Aksi bir tarihte sayaç güncellenir.
                 </p>
                 <div className="mt-4 flex justify-end">
                   <button
-                    className="mr-2 rounded-2xl px-4 py-1 text-sm font-bold  hover:text-blue-500"
+                    className="mr-2 rounded-2xl text-sm font-bold hover:text-blue-500"
                     onClick={toggleDialog}
                   >
                     Kapat

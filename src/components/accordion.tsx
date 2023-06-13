@@ -73,10 +73,10 @@ const AccordionMenu = () => {
         <Disclosure key={item.id}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex justify-between w-full p-3.5 text-sm font-semibold text-left bg-slate-950 dark:bg-white dark:text-slate-950 text-white rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+              <Disclosure.Button className="flex justify-between w-full p-3.5  font-semibold text-left border border-zinc-200 text-sm  text-zinc-800 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white rounded-lg ">
                 <span className="font-medium uppercase">{item.title}</span>
                 <svg
-                  className={`w-5 h-5 ml-2 transform transition-transform ${
+                  className={`w-5 h-5 ml-2 transform transition-transform shrink-0 ${
                     open ? "rotate-180" : "rotate-0"
                   }`}
                   viewBox="0 0 24 24"

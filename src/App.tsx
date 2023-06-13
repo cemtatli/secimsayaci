@@ -6,6 +6,7 @@ import Dialog from "./components/dialog";
 import { ElectionProvider } from "./context/election-context";
 import ToggleButton from "./components/toggle-button";
 import AccordionMenu from "./components/accordion";
+import ExchangeRates from "./components/exchange";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <ElectionProvider>
           <Header />
           <main>
+            <ExchangeRates />
             <ToggleButton />
             <Timer />
             <Dialog />

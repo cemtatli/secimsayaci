@@ -51,14 +51,14 @@ const Timer: React.FC = () => {
   }, [electionType]);
 
   return (
-    <div className="grid select-none grid-cols-2 gap-4 md:grid-cols-4">
+    <section className="grid select-none grid-cols-2 gap-4 md:grid-cols-4">
       {timerData.map((item, index) => (
         <div className="text-center dark:text-white text-slate-950" key={index}>
           <div className="text-5xl font-bold sm:text-6xl">{item.value}</div>
           <div className="text-base font-medium md:text-lg">{item.label}</div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

@@ -10,6 +10,7 @@ Bu web uygulaması, Türkiye'deki genel seçimlerin ve yerel seçimlerin ne zama
 
 - [x] Genel seçimlere kaç gün kaldığını gösteren bir geri sayım sayaçı eklenecek.
 - [x] Seçimlerle ilgili sıkça sorulan soruların listesi oluşturulacak.
+- [x] Türk Lirasının anlık döviz değerleri gösterilecek.
 - [ ] Haritada seçim sonuçları gösterilecek.
 - [ ] Kullanıcıların seçimlere ilişkin haberleri ve güncel bilgileri takip edebileceği bir bölüm eklenecek.
 - [ ] Kullanıcıların seçim sayacını paylaşabileceği sosyal medya entegrasyonu yapılacak.
