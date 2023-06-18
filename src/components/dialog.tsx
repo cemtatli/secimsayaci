@@ -68,7 +68,7 @@ const CustomDialog: React.FC = () => {
                 </p>
                 <div className="mt-4 flex justify-end">
                   <button
-                    className="mr-2 rounded-2xl text-sm font-bold hover:text-blue-500"
+                    className="mr-2 text-sm font-bold hover:text-blue-500"
                     onClick={toggleDialog}
                   >
                     Kapat

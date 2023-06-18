@@ -4,8 +4,8 @@ import { getExchangeRates } from "../services/exchange";
 interface Currency {
   Isim: string;
   CurrencyName: string;
-  ForexBuying: number;
-  ForexSelling: number;
+  BanknoteBuying: number;
+  BanknoteSelling: number;
 }
 
 const ExchangeRatesComponent: React.FC = () => {
@@ -20,8 +20,7 @@ const ExchangeRatesComponent: React.FC = () => {
             (currency: Currency) =>
               currency.CurrencyName === "US DOLLAR" ||
               currency.CurrencyName === "EURO" ||
-              currency.CurrencyName === "POUND STERLING" ||
-              currency.CurrencyName === "AZERBAIJANI NEW MANAT"
+              currency.CurrencyName === "POUND STERLING"
           )
         );
       } catch (error) {
@@ -35,13 +34,11 @@ const ExchangeRatesComponent: React.FC = () => {
   const formatCurrencyName = (name: string) => {
     switch (name) {
       case "US DOLLAR":
-        return "Dolar";
+        return "USD - Amerikan Doları";
       case "EURO":
-        return "Euro";
+        return "EUR - Euro";
       case "POUND STERLING":
-        return "Sterlin";
-      case "AZERBAIJANI NEW MANAT":
-        return "Azerbaycan Manatı";
+        return "GBP - İngiliz Sterlini";
       default:
         return name;
     }
@@ -52,10 +49,10 @@ const ExchangeRatesComponent: React.FC = () => {
       <h2 className="font-semibold text-base dark:text-white text-center md:text-start">
         Anlık Döviz Kurları
       </h2>
-      <div className="grid grid-cols-2  lg:grid-cols-4 gap-4 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
         {currencies.map((currency) => (
           <div
-            className="border border-zinc-200 text-sm font-medium  dark:border-zinc-700 dark:bg-zinc-900 dark:text-white rounded-lg p-2 flex flex-col justify-center items-center"
+            className="border border-zinc-200 text-sm font-medium dark:border-zinc-700 dark:bg-zinc-900 dark:text-white rounded-lg p-2 flex flex-col justify-center items-center"
             key={currency.CurrencyName}
           >
             <h3 className="text-base text-center font-semibold mb-2">
@@ -64,10 +61,10 @@ const ExchangeRatesComponent: React.FC = () => {
             <div className="text-sm">
               <div className="flex flex-col gap-1.5">
                 <span>
-                  <strong>Alış:</strong> {currency.ForexBuying.toFixed(2)} ₺
+                  <strong>Alış:</strong> {currency?.BanknoteBuying?.toFixed(2)} ₺
                 </span>
                 <span>
-                  <strong>Satış:</strong> {currency.ForexSelling.toFixed(2)} ₺
+                  <strong>Satış:</strong> {currency?.BanknoteSelling?.toFixed(2)} ₺
                 </span>
               </div>
             </div>
