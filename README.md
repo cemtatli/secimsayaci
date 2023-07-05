@@ -1,6 +1,6 @@
 # Seçim Sayacı
 
-Bu proje, Türkiye'deki genel seçimler ve yerel seçimler hakkında bilgiler sunan bir web uygulamasıdır.
+Türkiye'deki genel ve yerel seçimler hakkında bilgiler sunar.
 
 ## 📝 Proje Açıklaması 
 
