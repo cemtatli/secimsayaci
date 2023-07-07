@@ -10,7 +10,7 @@ type ElectionContextType = {
 export const ElectionContext = createContext<ElectionContextType>({
   electionType: "yerel",
   setElectionType: () => {
-    // Boş bir işlev olarak bırakabilirsiniz veya istediğiniz işlevselliği ekleyebilirsiniz
+    //
   },
 });
 

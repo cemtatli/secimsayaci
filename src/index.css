@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@600,800,601,900,100,700,400,200,300,500,1&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,9 +6,12 @@
 
 html,
 body {
-  font-family: "Rubik", sans-serif;
-  @apply h-screen w-full antialiased bg-gray-100;
+  font-family: "Switzer", sans-serif;
+  @apply h-full w-full antialiased dark:bg-zinc-900;
 }
 main {
-  @apply flex flex-col gap-8 mt-10;
+  @apply flex flex-col gap-y-6 mt-6;
+}
+#root {
+  @apply h-full w-full;
 }

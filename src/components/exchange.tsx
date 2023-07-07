@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getExchangeRates } from "../services/exchange"; // assuming you've imported the getExchangeRates function from the appropriate file
+import { getExchangeRates } from "../api/exchange"; // assuming you've imported the getExchangeRates function from the appropriate file
 import ExchangeRateCard from "./exchange-rate-card";
 
 const ExchangeRatesComponent: React.FC = () => {
