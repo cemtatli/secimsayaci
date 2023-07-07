@@ -5,7 +5,7 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  return <div className="wrapper">{children}</div>;
+  return <div className="container bg-white rounded-md min-h-full">{children}</div>;
 };
 
 export default MainLayout;

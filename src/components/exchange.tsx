@@ -1,77 +1,64 @@
 import React, { useEffect, useState } from "react";
-import { getExchangeRates } from "../services/exchange";
-
-interface Currency {
-  Isim: string;
-  CurrencyName: string;
-  BanknoteBuying: number;
-  BanknoteSelling: number;
-}
+import { getExchangeRates } from "../services/exchange"; // assuming you've imported the getExchangeRates function from the appropriate file
+import ExchangeRateCard from "./exchange-rate-card";
 
 const ExchangeRatesComponent: React.FC = () => {
-  const [currencies, setCurrencies] = useState<Currency[]>([]);
+  const [exchangeRates, setExchangeRates] = useState<any>(null);
 
   useEffect(() => {
     const fetchExchangeRates = async () => {
       try {
-        const rates = await getExchangeRates();
-        setCurrencies(
-          rates.filter(
-            (currency: Currency) =>
-              currency.CurrencyName === "US DOLLAR" ||
-              currency.CurrencyName === "EURO" ||
-              currency.CurrencyName === "POUND STERLING"
-          )
-        );
+        const data = await getExchangeRates();
+        setExchangeRates(data);
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchExchangeRates();
   }, []);
 
-  const formatCurrencyName = (name: string) => {
-    switch (name) {
-      case "US DOLLAR":
-        return "USD - Amerikan Doları";
-      case "EURO":
-        return "EUR - Euro";
-      case "POUND STERLING":
-        return "GBP - İngiliz Sterlini";
-      default:
-        return name;
-    }
-  };
+  return <ExchangeRatesList exchangeRates={exchangeRates} />;
+};
+
+const ExchangeRatesList: React.FC<{ exchangeRates: any }> = ({ exchangeRates }) => {
+  if (!exchangeRates) {
+    return null;
+  }
+
+  const { USD, EUR, GBP, "gram-altin": gramAltin } = exchangeRates;
+
+  const currencies = [
+    {
+      name: "USD",
+      selling: USD.Selling,
+      image: "https://i01.sozcucdn.com/wp-content/uploads/2023/07/06/dolar-ne-kadar-depo.jpg",
+    },
+    {
+      name: "EUR",
+      selling: EUR.Selling,
+      image:
+        "https://static4.depositphotos.com/1000781/384/i/450/depositphotos_3843513-stock-photo-euro-banknotes.jpg",
+    },
+    {
+      name: "GBP",
+      selling: GBP.Selling,
+      image:
+        "https://s.yimg.com/ny/api/res/1.2/OaVragOQnACnIqO.IqEsHA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/en/fx_empire_176/805ac4fa80b2d794c96bc6ea6dc62817",
+    },
+    {
+      name: "Gram Altın",
+      selling: gramAltin.Selling,
+      image:
+        "https://iaftm.tmgrup.com.tr/af6362/1200/627/0/31/874/488?u=https://iftm.tmgrup.com.tr/2021/12/22/gram-altin-kac-tl-gram-altin-dustu-mu-gram-altin-fiyati-22-aralik-1640145044059.jpeg",
+    },
+  ];
 
   return (
-    <section className="container mx-auto">
-      <h2 className="font-semibold text-base dark:text-white text-center md:text-start">
-        Anlık Döviz Kurları
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        {currencies.map((currency) => (
-          <div
-            className="border border-zinc-200 text-sm font-medium dark:border-zinc-700 dark:bg-zinc-900 dark:text-white rounded-lg p-2 flex flex-col justify-center items-center"
-            key={currency.CurrencyName}
-          >
-            <h3 className="text-base text-center font-semibold mb-2">
-              {formatCurrencyName(currency.CurrencyName)}
-            </h3>
-            <div className="text-sm">
-              <div className="flex flex-col gap-1.5">
-                <span>
-                  <strong>Alış:</strong> {currency?.BanknoteBuying?.toFixed(2)} ₺
-                </span>
-                <span>
-                  <strong>Satış:</strong> {currency?.BanknoteSelling?.toFixed(2)} ₺
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {currencies.map((currency) => (
+        <ExchangeRateCard key={currency.name} currency={currency} />
+      ))}
+    </div>
   );
 };
 

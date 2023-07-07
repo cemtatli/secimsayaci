@@ -1,4 +1,4 @@
-import ThemeChanger from "./theme-changer";
+import ThemeChanger from "./theme-toggle";
 
 const Header = () => {
   return (

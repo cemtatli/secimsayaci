@@ -4,7 +4,7 @@ import Header from "./components/header";
 import Timer from "./components/timer";
 import Dialog from "./components/dialog";
 import { ElectionProvider } from "./context/election-context";
-import ToggleButton from "./components/toggle-button";
+import ToggleButton from "./components/election-toggle";
 import AccordionMenu from "./components/accordion";
 import ExchangeRates from "./components/exchange";
 
